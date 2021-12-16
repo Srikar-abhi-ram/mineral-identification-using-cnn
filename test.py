@@ -34,10 +34,10 @@ model =tensorflow .keras.models.Sequential([
     tensorflow.keras.layers.Conv2D(64, (3,3), activation='relu'),
     tensorflow.keras.layers.MaxPooling2D(2,2),
     # The fourth convolution & Maxpooling
-    tensorflow.keras.layers.Conv2D(64, (3,3), activation='relu'),
+    tensorflow.keras.layers.Conv2D(128, (3,3), activation='relu'),
     tensorflow.keras.layers.MaxPooling2D(2,2),
     # The fifth convolution & maxpooling
-    tensorflow.keras.layers.Conv2D(64, (3,3), activation='relu'),
+    tensorflow.keras.layers.Conv2D(256, (3,3), activation='relu'),
     tensorflow.keras.layers.MaxPooling2D(2,2),
     # Flatten the results to feed into ann
     tensorflow.keras.layers.Flatten(),
@@ -75,7 +75,7 @@ import numpy as np
 import cv2
 from tensorflow.keras.preprocessing import image
 
-path = r'C:\Users\HP\Desktop\mini\2ndtest\test assets\test_set\diamond\diamond.43.jpg'
+path = r'C:\Users\HP\Desktop\mini\2ndtest\assets\dioptase\dioptase.33.jpg'
 test_image = image.load_img(path, target_size = (200, 200))
 # target size and input image size should be same
 test_image = image.img_to_array(test_image)
@@ -119,7 +119,7 @@ print('**************')
 
 image = cv2.imread(path)
 window_name = 'image'
-cv2.putText(image,x,(500,750),cv2.FONT_HERSHEY_SIMPLEX,2,(255,255,0),5)
+cv2.putText(image,x,(100,250),cv2.FONT_HERSHEY_SIMPLEX,2,(255,255,0),5)
 cv2.imshow(window_name, image)
 cv2.waitKey(0) 
 cv2.destroyAllWindows()
